@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.asalazar.alex.sleepalarm.MainActivity">
+    <item
+        android:id="@+id/snoozetime"
+        android:orderInCategory="100"
+        android:title="Snooze Length"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/userName"
+        android:orderInCategory="100"
+        android:title="Enter Name"
+        app:showAsAction="never" />
+
+</menu>

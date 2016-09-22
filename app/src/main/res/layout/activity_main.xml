@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.asalazar.alex.sleepalarm.MainActivity"
+    android:background="#273236">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alarm"
+            android:layout_margin="16dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:layout_centerVertical="true"/>
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="1dp"
+            android:layout_centerVertical="true"
+            android:launchMode="singleInstance"
+            android:id="@+id/powerSwitch" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_ic_done_black_18px"
+            android:layout_toLeftOf="@id/powerSwitch"
+            android:layout_centerVertical="true"
+            android:id="@+id/status" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:cardBackgroundColor="@color/colorCard">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start"
+                    android:layout_margin="16dp"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/colorAccent"/>
+
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_mode_edit_white_18dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:id="@+id/editBttnStart" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="XX:XX"
+                    android:textSize="20sp"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="20dp"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="2dp"
+        app:cardBackgroundColor="@color/colorCard">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="End"
+                    android:layout_margin="16dp"
+                    android:textColor="@color/colorAccent"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_mode_edit_white_18dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:id="@+id/editBttnEnd" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XX:XX"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="20dp"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Options"
+        android:textSize="20sp"
+        android:layout_margin="16dp"
+        android:textColor="@color/colorAccent"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:cardBackgroundColor="@color/colorCard">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:id="@+id/alarmActionLayout">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DISMISS"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:id="@+id/dismiss"
+                        android:textColor="#ffffff"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RESUME"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:id="@+id/alarmOn"
+                        android:visibility="gone"
+                        android:textColor="#ffffff"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SNOOZE"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:id="@+id/snooze"
+                        android:textColor="#ffffff"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DELETE"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:id="@+id/trash"
+                        android:textColor="#ffffff"/>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

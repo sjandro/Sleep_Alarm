@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.asalazar.alex.sleepalarm">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.asalazar.alex.sleepalarm.DummyBrightnessActivity"
+            android:taskAffinity="com.Test.Dummy"
+            android:excludeFromRecents="true"
+            android:theme="@style/EmptyActivity">
+        </activity>
+        <receiver
+            android:name="com.asalazar.alex.sleepalarm.Screen"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.alex.sleepalarm.BroadcastReceiver" />
+                <action android:name="DISMISS_ACTION"/>
+                <action android:name="SNOOZE_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".StartServiceOnBoot" android:enabled="true" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".AlarmNotification"></receiver>
+        <service android:name="com.asalazar.alex.sleepalarm.ScreenDetectService" android:enabled="true" android:process=":Screen_background" />
+    </application>
+
+</manifest>
